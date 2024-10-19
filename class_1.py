@@ -24,8 +24,19 @@ class Developer(Employee):
       def __init__(self,first,last,pay,prog_lang):
           super().__init__(first,last,pay)
           self.prog_lang = prog_lang
+class Manager(Employee):
+    def __init__(self,first,last,pay,employees= None):
+        super().__init__(first,last,pay) 
+        if employees is None:
+            self.employees = []
+        else:
+            self.employees = employees
+    def add_emp(self,emp):
+        if emp not in self.employees:
+            self.employees.append(emp)
 
-          
+isinstance() # is name an instance of the class
+
           
 
 dev_1 = Developer('corey','shafur',5000000, "Py")
